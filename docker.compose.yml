@@ -1,0 +1,11 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    command: python server.py n
+  client:
+    build: ./client
+    depends_on:
+      - server
